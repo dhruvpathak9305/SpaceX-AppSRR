@@ -34,6 +34,7 @@ app.get("*", (req, res) => {
   Promise.all(promises).then(() => {
     const context = {};
     const content = renderer(req, store, context);
+    
     if (context.notFound) {
       res.status(404);
     }
