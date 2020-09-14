@@ -5,13 +5,13 @@
  */
 import serialize from "serialize-javascript";
 
-
-const Html = ({ content, title = "SpaceX",store }) => `
+const Html = ({ content, title = "SpaceX", styles, store }) => `
   <!DOCTYPE html>
   <html>
     <head>
       <title>${title}</title>
-     
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      ${styles}
     </head>
     <body style="margin:0">
       <div id="root">${content}</div>
