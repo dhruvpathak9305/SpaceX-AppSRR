@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 const Card = styled.div`
   width: max-content;
+  height: max-content;
   text-align: center;
-  background-color: yellow;
+  background-color: white;
   border-radius: 2px;
   padding: 10px;
-  margin:2px;
+  margin: 2px;
   img {
     width: 150px;
     height: auto;
@@ -21,8 +22,8 @@ const Card = styled.div`
 
   h3:not(:first-of-type) {
     color: black;
-   
-    margin:5px;
+
+    margin: 5px;
     /* display:inline-block; */
   }
   span {

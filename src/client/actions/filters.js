@@ -1,10 +1,10 @@
 // SET_YEAR_FILTER
 
 export const SET_YEAR_FILTER = "setYearFilter";
-export const setYearFilter = (year = "") => ({
-  type: "SET_YEAR_FILTER",
-  year,
-});
+export const setYearFilter = (year="") => ({
+    type: "SET_YEAR_FILTER",
+    year,
+  });
 
 // SET_LAUNCH_FILTER
 
@@ -21,3 +21,9 @@ export const setLandingFilter = (landing = "") => ({
   type: "SET_LANDING_FILTER",
   landing,
 });
+
+
+// return({
+//     type: "SET_YEAR_FILTER",
+//     year,
+//   })

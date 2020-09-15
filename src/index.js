@@ -1,8 +1,3 @@
-// const express = require("express");
-// const React = require("react");
-// const renderToString = require("react-dom/server").renderToString;
-// const Home = require("./client/components/Home").default;
-
 import "babel-polyfill";
 import express from "express";
 import { matchRoutes } from "react-router-config";
@@ -34,7 +29,7 @@ app.get("*", (req, res) => {
   Promise.all(promises).then(() => {
     const context = {};
     const content = renderer(req, store, context);
-    
+
     if (context.notFound) {
       res.status(404);
     }

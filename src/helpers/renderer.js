@@ -23,18 +23,10 @@ export default (req, store, context) => {
 
   const styles = sheet.getStyleTags(); // <-- getting all the tags from the sheet
 
-  const title = 'Styled Components';
+  const title = "Styled Components";
 
-  // console.log(Html({content,store}));
+  console.log(store.getState());
+  console.log("renderer")
 
-  return Html({ content,styles,title, store });
+  return Html({ content, styles, title, store });
 };
-
-// `<html>
-// <head></head>
-// <body>
-// <div id='root'>${content}</div>
-// <script>window.INITIAL_STATE=${serialize(store.getState())}</script>
-// <script src="bundle.js"></script>
-// </body>
-// </html>`;

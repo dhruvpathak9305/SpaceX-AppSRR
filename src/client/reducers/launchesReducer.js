@@ -1,4 +1,4 @@
-import { FETCH_LAUNCHES } from "../actions";
+import { FETCH_LAUNCHES } from "../actions/launches";
 
 export default (state = [], action) => {
   switch (action.type) {

@@ -18,6 +18,9 @@ const store = createStore(
   applyMiddleware(thunk)
 );
 
+console.log(store.getState());
+console.log("client");
+
 ReactDOM.hydrate(
   <Provider store={store}>
     <BrowserRouter>

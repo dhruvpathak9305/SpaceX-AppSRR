@@ -23,17 +23,10 @@ const LaunchesDiv = styled.div`
   justify-items: center;
 `;
 
-class LaunchesListPage extends Component {
+class HomePage extends Component {
   componentDidMount() {
     this.props.fetchLaunches();
   }
-
-  //helper function to create the list of launches.
-  // renderLaunches() {
-  //   return this.props.launches.map((launch) => {
-  //     return <li key={launch.flight_number}>{launch.mission_name}</li>;
-  //   });
-  // }
 
   renderLaunches() {
     return this.props.launches.map((launch, index) => {
@@ -85,43 +78,5 @@ function loadData(store) {
 
 export default {
   loadData,
-  component: connect(mapStateToProps, { fetchLaunches })(LaunchesListPage),
+  component: connect(mapStateToProps, { fetchLaunches })(HomePage),
 };
-
-// renderLaunches() {
-//   return this.props.launches.map((launch, index) => {
-//     const mission_name = launch.mission_name
-//       ? launch.mission_name
-//       : "Not Present";
-//     const mission_id = launch.mission_id[0]
-//       ? launch.mission_id[0]
-//       : "Not Present";
-//     const launch_year = launch.launch_year ? launch.launch_year : "2014";
-//     const launch_success = launch.launch_success
-//       ? "Launch Success"
-//       : "Launch Failure";
-//     const land_success = launch.rocket.first_stage.cores[0].land_success
-//       ? "Land Success"
-//       : "Land Failure";
-//     const img = launch.links.mission_patch
-//       ? launch.links.mission_patch
-//       : "Not Present";
-//     const img_small = launch.links.mission_patch_small
-//       ? launch.links.mission_patch_small
-//       : "Not Present";
-
-//     return (
-//       <LaunchCard
-//         key={launch.flight_number}
-//         index={index}
-//         mission_name={mission_name}
-//         mission_id={mission_id}
-//         launch_year={launch_year}
-//         launch_success={launch_success}
-//         land_success={land_success}
-//         img={img}
-//         img_small={img_small}
-//       />
-//     );
-//   });
-// }

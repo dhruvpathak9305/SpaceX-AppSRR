@@ -4,23 +4,16 @@ import Header from "./components/Header";
 import styled from "styled-components";
 
 // Our single Styled Component definition
-// const AppContainer = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   position: fixed;
-//   width: 100%;
-//   height: 100%;
-//   font-size: 40px;
-//   background: linear-gradient(20deg, rgb(219, 112, 147), black);
-// `;
+const AppContainer = styled.div`
+  background-color: #f2f2f2;
+`;
 
 const App = ({ route }) => {
   return (
-    <div>
+    <AppContainer>
       <Header />
       {renderRoutes(route.routes)}
-    </div>
+    </AppContainer>
   );
 };
 
