@@ -2,11 +2,11 @@ import axios from "axios";
 
 export const FETCH_LAUNCHES = "fetch_launches";
 
-export const fetchLaunches = (value = 1) => async (dispatch) => {
-  const res = await axios.get(
-    `https://api.spacexdata.com/v3/launches?limit=100`
-  );
-
+export const fetchLaunches = ({
+  apiEndPoint = "https://api.spacexdata.com/v3/launches?limit=4",
+}) => async (dispatch) => {
+  const res = await axios.get(`${apiEndPoint}`);
+  console.log(`@@@@@@@@@@@@@@ ${apiEndPoint} @@@@@@@@@@@@@@@@@`);
   const payload = res.data.map((data) => ({
     flight_number: data.flight_number,
     mission_name: data.mission_name ? data.mission_name : "Not Present",

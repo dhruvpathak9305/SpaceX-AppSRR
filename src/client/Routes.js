@@ -16,11 +16,11 @@ export default [
       },
       {
         path: "/launches",
-        ...LaunchesListPage,
+        ...HomePage,
       },
       {
         ...NotFoundPage,
-      }
+      },
     ],
   },
 ];

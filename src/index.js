@@ -13,10 +13,24 @@ app.use(express.static("public"));
 app.get("*", (req, res) => {
   const store = createStore();
 
+  const filters = {
+    year: 2006,
+    launch: "true",
+    landing: "true",
+  };
+  const query = req.query;
+  console.log("query" + JSON.stringify(query));
+  console.log("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
+  
   //Some logic to initialize and load data into store
+
+  Routes[0].routes.forEach((r) => {
+    r.queryParams = req.query;
+  });
+
   const promises = matchRoutes(Routes, req.path)
     .map(({ route }) => {
-      return route.loadData ? route.loadData(store) : null;
+      return route.loadData ? route.loadData(store, query) : null;
     })
     .map((promise) => {
       if (promise) {
@@ -27,7 +41,7 @@ app.get("*", (req, res) => {
     });
 
   Promise.all(promises).then(() => {
-    const context = {};
+    const context = { requestQueryParams: req.query };
     const content = renderer(req, store, context);
 
     if (context.notFound) {
